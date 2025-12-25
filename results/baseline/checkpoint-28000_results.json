@@ -1,0 +1,13 @@
+{
+  "checkpoint": "checkpoints/baseline_uniform_softmax/checkpoint-28000",
+  "metrics": {
+    "BLEU-1": 0.21980664825221186,
+    "BLEU-2": 0.10366567783584923,
+    "BLEU-3": 0.04474969988215114,
+    "BLEU-4": 0.01948604298575442,
+    "ROUGE-L": 0.18364210696701785,
+    "CIDEr": 0.0464203142799862
+  },
+  "perplexity": 314.9455871582031,
+  "num_samples": 5000
+}

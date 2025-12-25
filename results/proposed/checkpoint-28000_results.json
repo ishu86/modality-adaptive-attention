@@ -1,0 +1,13 @@
+{
+  "checkpoint": "checkpoints/proposed_modality_adaptive/checkpoint-28000",
+  "metrics": {
+    "BLEU-1": 0.182751759697052,
+    "BLEU-2": 0.0843524947529101,
+    "BLEU-3": 0.0364460487075965,
+    "BLEU-4": 0.015953010378364912,
+    "ROUGE-L": 0.15954433526070103,
+    "CIDEr": 0.01773190139766973
+  },
+  "perplexity": 293.8898620605469,
+  "num_samples": 5000
+}

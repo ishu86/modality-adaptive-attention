@@ -1,0 +1,125 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# ============================================
+# Large Files - IMPORTANT for this project
+# ============================================
+
+# Model checkpoints (~176GB) - keep directory structure only
+checkpoints/
+!checkpoints/.gitkeep
+
+# Cached features (~41GB) - CLIP embeddings, etc.
+cache/
+*.npy
+*.npz
+!cache/.gitkeep
+
+# ============================================
+# Weights & Biases (~246MB)
+# ============================================
+wandb/
+*.wandb
+**/wandb/
+
+# HuggingFace cache
+.huggingface/
+~/.cache/huggingface/
+
+# ============================================
+# Logs and temporary files
+# ============================================
+*.log
+logs/
+*.tmp
+*.temp
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# ============================================
+# Data files (if downloaded locally)
+# ============================================
+data/
+*.tar.gz
+*.zip
+*.tar
+*.gz
+
+# ============================================
+# Environment and secrets
+# ============================================
+.env
+.env.*
+*.pem
+*.key
+secrets/
+
+# ============================================
+# Testing and coverage
+# ============================================
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# mypy / type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# ============================================
+# Claude Code (local planning files)
+# ============================================
+.claude/
+
+# Sample/test images
+sample_*.jpg
+sample_*.png

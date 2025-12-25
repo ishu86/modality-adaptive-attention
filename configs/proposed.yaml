@@ -1,0 +1,13 @@
+# Proposed: Modality-Adaptive Attention
+# Linear attention for vision tokens, softmax for text tokens
+
+defaults:
+  - base
+
+experiment_name: "proposed_modality_adaptive"
+
+model:
+  attention_type: "modality_adaptive"
+  vision_attention: "linear"  # ELU+1 feature map
+  text_attention: "softmax"   # Standard softmax
+  cross_modal_attention: "softmax"  # Text attending to vision uses softmax

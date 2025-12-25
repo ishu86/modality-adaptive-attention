@@ -1,0 +1,10 @@
+# Ablation: Uniform Linear Attention
+# All tokens use linear attention
+
+defaults:
+  - base
+
+experiment_name: "ablation_uniform_linear"
+
+model:
+  attention_type: "linear"  # uniform linear for all tokens

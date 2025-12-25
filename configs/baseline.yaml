@@ -1,0 +1,10 @@
+# Baseline: Uniform Softmax Attention
+# All tokens use standard softmax attention
+
+defaults:
+  - base
+
+experiment_name: "baseline_uniform_softmax"
+
+model:
+  attention_type: "softmax"  # uniform softmax for all tokens

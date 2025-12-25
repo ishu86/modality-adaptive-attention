@@ -1,0 +1,13 @@
+torch>=2.0
+transformers>=4.30
+datasets
+Pillow
+wandb
+pycocoevalcap
+einops
+omegaconf
+accelerate
+numpy
+tqdm
+matplotlib
+seaborn

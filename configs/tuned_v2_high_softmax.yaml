@@ -1,0 +1,49 @@
+# Tuned V2 with higher softmax ratio for better visual grounding
+# Hypothesis: More softmax for vision = better CIDEr
+
+model:
+  hidden_dim: 768
+  num_heads: 12
+  num_layers: 6
+  ffn_dim: 3072
+  vocab_size: 50257
+  max_seq_length: 274
+  dropout: 0.1
+  attention_type: "modality_adaptive_v2"
+
+attention:
+  use_gated_mixing: true
+  # Higher softmax ratio: 50% softmax, 50% linear (was 30%)
+  initial_softmax_ratio: 0.5
+  linear_temperature: 1.0
+
+vision:
+  model_name: "openai/clip-vit-base-patch16"
+  freeze: true
+
+training:
+  batch_size: 32
+  learning_rate: 5.0e-5
+  weight_decay: 0.01
+  warmup_steps: 1000
+  max_steps: 30000
+  gradient_accumulation_steps: 2
+  max_grad_norm: 1.0
+  fp16: true
+
+data:
+  train_dataset: "conceptual_captions"
+  eval_dataset: "coco_captions"
+  max_caption_length: 77
+  use_cached_features: true
+  cache_dir: "./cache"
+
+checkpoint:
+  save_dir: "./checkpoints/tuned_v2_high_softmax"
+  save_steps: 1000
+  eval_steps: 2000
+
+logging:
+  wandb_project: "modality-adaptive-attention"
+  wandb_run_name: "tuned_v2_softmax_50pct"
+  log_steps: 100

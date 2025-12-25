@@ -1,0 +1,49 @@
+# Progressive Modality-Adaptive Attention Configuration
+# Early layers use pure softmax (learn good representations)
+# Later layers use modality-adaptive (efficient processing)
+
+model:
+  hidden_dim: 768
+  num_heads: 12
+  num_layers: 6
+  ffn_dim: 3072
+  vocab_size: 50257
+  max_seq_length: 274  # 197 vision + 77 text tokens
+  dropout: 0.1
+  attention_type: "progressive"
+
+# Progressive attention parameters
+attention:
+  # First N layers use pure softmax (more = better visual representations)
+  softmax_layers: 3
+
+vision:
+  model_name: "openai/clip-vit-base-patch16"
+  freeze: true
+
+training:
+  batch_size: 32
+  learning_rate: 5.0e-5
+  weight_decay: 0.01
+  warmup_steps: 1000
+  max_steps: 30000
+  gradient_accumulation_steps: 2
+  max_grad_norm: 1.0
+  fp16: true
+
+data:
+  train_dataset: "conceptual_captions"
+  eval_dataset: "coco_captions"
+  max_caption_length: 77
+  use_cached_features: true
+  cache_dir: "./cache"
+
+checkpoint:
+  save_dir: "./checkpoints/progressive"
+  save_steps: 1000
+  eval_steps: 2000
+
+logging:
+  wandb_project: "modality-adaptive-attention"
+  wandb_run_name: "progressive_softmax_first_2"
+  log_steps: 100

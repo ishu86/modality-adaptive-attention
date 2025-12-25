@@ -1,0 +1,13 @@
+{
+  "checkpoint": "checkpoints/ablation_uniform_linear/checkpoint-28000",
+  "metrics": {
+    "BLEU-1": 6.90188283363697e-21,
+    "BLEU-2": 7.024146496522568e-21,
+    "BLEU-3": 7.151552137818233e-21,
+    "BLEU-4": 7.284525827837179e-21,
+    "ROUGE-L": 0.0,
+    "CIDEr": 0.0
+  },
+  "perplexity": 1.1049103736877441,
+  "num_samples": 5000
+}

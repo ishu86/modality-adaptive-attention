@@ -1,0 +1,9 @@
+Baseline (Softmax):
+ of a dog on the beach . dog breed .
+
+Proposed (Modality-Adaptive):
+ is a dog breed . the most beautiful people .
+
+Ablation (Linear):
+ feature feature feature feature feature feature feature feature feature feature
+
