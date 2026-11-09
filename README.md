@@ -43,7 +43,7 @@ By preserving softmax attention where it matters (text tokens and cross-modal gr
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/modality-adaptive-attention.git
+git clone https://github.com/ishu86/modality-adaptive-attention.git
 cd modality-adaptive-attention
 pip install -r requirements.txt
 ```
